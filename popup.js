@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   btnLoad.addEventListener('click', onClickLoad);
 });
 chrome.runtime.onMessage.addListener(function(message, sender, response) {
-	console.log(sender + ": " + message);
+	console.log("Message to popup:");
+	console.log(message);
 });
 
