@@ -1,0 +1,19 @@
+{
+	"manifest_version" : 2,
+	"name" : "Checker",
+	"description" : "Save and restore checkbox state",
+	"version" : "0.1",
+	"content_scripts" : [
+		{
+			"matches" : ["*://*/*"],
+			"js" : ["mcScript.js"]
+		}
+	],
+	"browser_action" : {
+		"default_popup" : "popup.html",
+		"default_title" : "Popup title!"
+	},
+	"permissions" : [
+		"activeTab","tabs", "http://*/*", "https://*/*"
+	]
+}
