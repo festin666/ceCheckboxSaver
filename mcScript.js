@@ -1,8 +1,14 @@
 function restoreCheckboxes() {
 	var allCheckboxes = document.evaluate("//input[starts-with(@type,'checkbox')]", document.documentElement, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
 	var selectedCheckboxes = localStorage.getItem("selectedCheckboxes").split(",");
+	console.log(allCheckboxes);
 	for(var i=0; i<allCheckboxes.snapshotLength; i++){
 		id = allCheckboxes.snapshotItem(i).id;
+		if (id == '') {
+			alert('Something wrong...');
+			break;
+		}
+		console.log("i = " + i + " id = " + id);
 		chk = document.getElementById(id);
 		if (selectedCheckboxes.indexOf(chk.id) > -1) {
 			chk.checked = true;
